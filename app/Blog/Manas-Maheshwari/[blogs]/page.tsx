@@ -5,7 +5,11 @@ import Image from "next/image";
 import { Image as NxtImg } from "@heroui/react";
 import HTMLReactParser from "html-react-parser/lib/index";
 
-const CustomBlog = ({ params }: any) => {
+export function generateStaticParams() { // Only for deployment it is used..Rather than no use of this
+  return [{ blogs: '1' }];
+}
+
+const CustomBlog = ({ params }: { params: { blogs: string } }) => {
   const [info, setInfo]: any = useState(undefined);
   const [id, setId]: any = useState(null);
 
