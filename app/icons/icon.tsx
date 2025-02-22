@@ -77,3 +77,8 @@ export const DeleteDocumentIcon = (props: any) => {
         </svg>
     );
 };
+
+const icon = () => {
+    return <></>
+}
+export default icon;
