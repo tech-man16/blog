@@ -78,7 +78,3 @@ export const DeleteDocumentIcon = (props: any) => {
     );
 };
 
-const icon0 = () => {
-    return <></>
-}
-export default icon0;
