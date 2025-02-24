@@ -25,7 +25,7 @@ import { signup } from "../(server)/actions";
 
 // )
 
-export const DeleteDocumentIcon = () => {
+const DeleteDocumentIcon = () => {
   return (
     <svg
       aria-hidden="true"
