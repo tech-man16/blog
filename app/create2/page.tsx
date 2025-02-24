@@ -3,7 +3,7 @@ import { Textarea, Button, Input, Tooltip } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import HTMLReactParser from "html-react-parser/lib/index";
-import { UploadIcon, UploadImageIcon, DeleteDocumentIcon } from "../icons/icon";
+import { UploadIcon, UploadImageIcon, DeleteDocumentIcon } from "@/app/icons/icon";
 import { signup } from "../(server)/actions";
 
 const CreateBlog = (props: any) => {
