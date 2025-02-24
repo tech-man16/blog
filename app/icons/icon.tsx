@@ -1,4 +1,4 @@
-
+'use client';
 export const HeartIcon = ({
     width,
     height,
@@ -77,8 +77,3 @@ export const DeleteDocumentIcon = (props: any) => {
         </svg>
     );
 };
-
-const icon0 = () => {
-    return <></>
-}
-export default icon0;
