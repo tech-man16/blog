@@ -2,7 +2,8 @@
 import { Card, CardHeader, CardFooter, Button, CardBody, Input } from "@heroui/react";
 
 import { useEffect, useState } from "react";
-import { HeartIcon } from "@/app/icons/icon";
+// import { HeartIcon } from "@/app/icons/icon";
+import HeartIcon from "@/app/icons/icon";
 import { getBlog } from "@/app/(server)/actions";
 import { useRouter } from "next/navigation";
 
