@@ -14,8 +14,6 @@ async function connect() {
 
   client0 = await MongoClient.connect(url, options);
 
-  
-
   // client0.on('TopologyChange', (err: any, topology: any) => {
   //   if (err) {
   //     console.error('Connection lost:', err);

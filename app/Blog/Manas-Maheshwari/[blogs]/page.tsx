@@ -4,7 +4,7 @@ export function generateStaticParams() { // Only for deployment it is used..Rath
 }
 
 const Customblog = ({ params }: { params: { blogs: string } }) => {
-  return <CustomBlog params={params} />
+  return <CustomBlog blogs={params.blogs} />
 }
 
 export default Customblog;

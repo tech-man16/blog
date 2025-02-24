@@ -1,9 +1,6 @@
 'use client';
-import { Card, CardHeader, CardFooter, Button, CardBody, Input } from "@heroui/react";
-
+import { Card, CardHeader, CardFooter, Button, CardBody, Input, Image } from "@heroui/react";
 import { useEffect, useState } from "react";
-// import { HeartIcon } from "@/app/icons/icon";
-// import HeartIcon from "@/app/icons/icon";
 import { getBlog } from "@/app/(server)/actions";
 import { useRouter } from "next/navigation";
 
@@ -47,7 +44,7 @@ const BlogList = () => {
         if (e.target.value.length) {
             update(() => {
                 const newArr = li.filter((val: any) => val.startsWith(e.target.value)) || li;
-                console.log(newArr);
+                // console.log(newArr);
                 return newArr;
             })
         } else {
@@ -63,7 +60,7 @@ const BlogList = () => {
     useEffect(() => {
         (async () => {
             const data = await getBlog({});
-            console.log(data);
+            // console.log(data);
             update(data.data);
         })();
     }, []);
@@ -82,6 +79,12 @@ const BlogList = () => {
                                 className={`col-span-1 md:col-span-3 bg-cover bg-gradient-to-tr hover:bg-gradient-to-tr from-purple-500 hover:from-purple-500/80 to-purple-700 hover:to-purple-700/80 min-w-[80%] md:min-w-[80%] min-h-[300px]`}
                                 style={{ backgroundImage: elem.coverimageurl }}
                             >
+                                <CardBody className="w-full">
+                                    <Image alt={`blog${ind + 1}`} src={elem.coverimageurl}
+                                        className="w-full object-cover"
+                                        classNames={{ wrapper: "min-w-full" }}
+                                    />
+                                </CardBody>
                                 <CardFooter className="bottom-0 z-10 absolute flex justify-between items-center gap-3 bg-white/30 border-zinc-100/50 border-t-1 h-16">
                                     <span className="text-black"> {elem.title.length > 30 ? `${elem.title.slice(0, 30)}...` : elem.title} </span>
 

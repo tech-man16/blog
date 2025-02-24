@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest) {
     try {
-        // console.log(request.url)
+        console.log(request.url)
         return NextResponse.redirect(new URL("/Blog/Manas-Maheshwari", request.url));
     } catch (e) {
         console.log("catch")
@@ -13,5 +13,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: "/Blog/tech-man"
+    matcher: ["/Blog/tech-man"]
 }

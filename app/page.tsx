@@ -1,9 +1,7 @@
-import { Button } from "@heroui/react"
 import { Link } from "@heroui/react"
 import Navbar from "./components/navbar"
 export default function Home() {
   return (
-
     <>
       <div className="flex flex-col gap-2 h-screen">
         <Navbar />
@@ -12,6 +10,5 @@ export default function Home() {
         </div>
       </div>
     </>
-
   )
 }
