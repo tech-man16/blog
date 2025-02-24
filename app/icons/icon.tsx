@@ -4,7 +4,6 @@ const HeartIcon = ({
     size = 24,
     strokeWidth = 1.5,
     fill = "none",
-    ...props
 }: any) => {
     return (
         <svg
@@ -15,7 +14,6 @@ const HeartIcon = ({
             role="presentation"
             viewBox="0 0 24 24"
             width={size || width}
-            {...props}
         >
             <path
                 d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z"
@@ -46,7 +44,7 @@ export const UploadImageIcon = () => (
 
 )
 
-export const DeleteDocumentIcon = (props: any) => {
+export const DeleteDocumentIcon = () => {
     return (
         <svg
             aria-hidden="true"
@@ -56,7 +54,6 @@ export const DeleteDocumentIcon = (props: any) => {
             role="presentation"
             viewBox="0 0 24 24"
             width="1em"
-            {...props}
         >
             <path
                 d="M21.07 5.23c-1.61-.16-3.22-.28-4.84-.37v-.01l-.22-1.3c-.15-.92-.37-2.3-2.71-2.3h-2.62c-2.33 0-2.55 1.32-2.71 2.29l-.21 1.28c-.93.06-1.86.12-2.79.21l-2.04.2c-.42.04-.72.41-.68.82.04.41.4.71.82.67l2.04-.2c5.24-.52 10.52-.32 15.82.21h.08c.38 0 .71-.29.75-.68a.766.766 0 0 0-.69-.82Z"
