@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { connect, disconnect } from "@/app/db/connection";
-import { readdir, unlink, writeFile, copyFile } from "fs/promises";
-import path from "path";
+// import { readdir, unlink, writeFile, copyFile } from "fs/promises";
+// import path from "path";
 
-export const POST = async (req: any, res: any) => {
+export const POST = async (req: NextRequest, res: NextResponse) => {
     try {
 
         const db = await connect();
@@ -49,11 +49,11 @@ export const POST = async (req: any, res: any) => {
             //     await writeFile(path.join(process.cwd(), `public/tmp/${ind + 1}.jpeg`), buffer);
             // });
 
-            return Response.json({ message: 'Uploaded Successfull', status: 200 }, { status: 200 });
+            return NextResponse.json({ message: 'Uploaded Successfull', status: 200 }, { status: 200 });
         }
         catch (e) {
             console.log(e);
-            return Response.json({ message: 'Uploaded Failed', status: 500, error: e }, { status: 500 });
+            return NextResponse.json({ message: 'Uploaded Failed', status: 500, error: e }, { status: 500 });
         }
     } catch (e) {
         console.log(e);
