@@ -6,24 +6,24 @@ import HTMLReactParser from "html-react-parser/lib/index";
 // import { UploadIcon, UploadImageIcon, DeleteDocumentIcon } from "@/app/icons/icon";
 import { signup } from "../(server)/actions";
 
-// export const UploadIcon = () => {
-//   return (
-//     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-//       <path
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//         d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
-//       />
-//     </svg>
-//   )
-// }
+const UploadIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+      />
+    </svg>
+  )
+}
 
-// export const UploadImageIcon = () => (
-//   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-//     <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-//   </svg>
+const UploadImageIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+  </svg>
 
-// )
+)
 
 const DeleteDocumentIcon = () => {
   return (
@@ -154,7 +154,7 @@ const CreateBlog = (props: any) => {
                   color="danger"
                   onPress={() => { updateimage((prev: any) => ({ ...prev, coverimage: null })) }}
                 >
-                  {/* <DeleteDocumentIcon /> */}
+                  <DeleteDocumentIcon />
                 </Button>
               }
             </div>}
@@ -165,7 +165,7 @@ const CreateBlog = (props: any) => {
           <div className="flex justify-end items-center pr-4">
             <Tooltip delay={0} closeDelay={0} content="Upload Cover" placement="bottom">
               <Button isIconOnly variant="light" onPress={() => imgFile.current.click()}>
-                {/* <UploadIcon /> */}
+                <UploadIcon />
               </Button>
             </Tooltip>
             <Input type="file" className="hidden" ref={imgFile} onChange={handleImage} />
@@ -201,7 +201,7 @@ const CreateBlog = (props: any) => {
             <div className="flex justify-end">
               <Tooltip delay={0} closeDelay={0} content="Add Image" placement="bottom" showArrow>
                 <Button isIconOnly variant="light" onPress={() => addImage.current.click()}>
-                  {/* <UploadImageIcon /> */}
+                  <UploadImageIcon />
                 </Button>
               </Tooltip>
               <Input className="hidden" type="file" ref={addImage} onChange={handlePhotos} />
