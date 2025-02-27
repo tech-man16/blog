@@ -38,20 +38,21 @@ const CustomBlog = ({ blogs }: any) => {
 
       {info &&
         <div className="flex flex-col p-4 h-screen overflow-auto">
-          <div className={`flex justify-center items-center min-h-[400px] bg-cover `}>
+          <div className={`flex flex-col  min-h-[400px] bg-cover `}>
             <Img
               src={id} alt="blog image"
-              className="w-full max-h-[400px] object-cover"
-              classNames={{ wrapper: "min-w-full" }}
+              className="w-full max-h-[400px] object-cover min-h-full"
+              classNames={{ wrapper: "min-w-full min-h-full" }}
             />
-
           </div>
+          <span className="flex italic p-2 justify-end  text-current/45 text-small"> Published on: {info.currentDate} </span>
           <div className="flex flex-col md:mx-[25%] p-4">
-            <div className={`flex items-center bg-inherit text-3xl hover:bg-inherit/80 p-4 h-24`}>
+
+            <div className={`flex items-center border bg-inherit text-3xl hover:bg-inherit/80 p-4 h-24`}>
               {info.title}
             </div>
 
-            <div className={`flex flex-col bg-inherit flex-1 hover:bg-inherit/80 p-4 h-24`}>
+            <div className={`flex flex-col border bg-inherit flex-1 hover:bg-inherit/80 p-4 h-24`}>
               {HTMLReactParser(info.blog)}
             </div>
 
