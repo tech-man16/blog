@@ -7,6 +7,7 @@ import { Image as Img } from "@heroui/react";
 const CustomBlog = ({ blogs }: any) => {
   const [info, setInfo]: any = useState(undefined);
   const [id, setId]: any = useState(null);
+  const [msg, updateMsg] = useState("Loading...")
   useEffect(() => {
     (async () => {
       const id = `${blogs.slice(1, 9)}${blogs.slice(11)}`
@@ -16,10 +17,13 @@ const CustomBlog = ({ blogs }: any) => {
       const data = await getBlog({ BlogId: id });
       // console.log(data);
       const regex = /{{image\d+}}/g;
-
-      data.data[0].blog = data.data[0].blog.replace(regex, (match: any) => {
-        const imageId = match.match(/\d+/)[0];
-        return `<br /> <Image
+      if (data.status != 200) {
+        updateMsg("Error...");
+      }
+      else {
+        data.data[0].blog = data.data[0].blog.replace(regex, (match: any) => {
+          const imageId = match.match(/\d+/)[0];
+          return `<br /> <Image
                     priority={true}
                     src=${data.data[0].images[imageId]}
                     alt="Blog Cover Page"
@@ -27,9 +31,10 @@ const CustomBlog = ({ blogs }: any) => {
                     width={100}
                     height={100}
                 /> <br />`;
-      })
-      console.log(data.data[0]);
-      setInfo(data.data[0]);
+        })
+        console.log(data.data[0]);
+        setInfo(data.data[0]);
+      }
     })();
   }, []);
 
@@ -60,7 +65,7 @@ const CustomBlog = ({ blogs }: any) => {
 
         </div >
         :
-        <> Loading... </>
+        <> {msg} </>
       }
     </>
   )
