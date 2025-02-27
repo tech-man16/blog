@@ -36,7 +36,7 @@ const CustomBlog = ({ blogs }: any) => {
   return (
     <>
 
-      {info &&
+      {info ?
         <div className="flex flex-col p-4 h-screen overflow-auto">
           <div className={`flex flex-col  min-h-[400px] bg-cover `}>
             <Img
@@ -59,6 +59,8 @@ const CustomBlog = ({ blogs }: any) => {
           </div>
 
         </div >
+        :
+        <> Loading... </>
       }
     </>
   )
