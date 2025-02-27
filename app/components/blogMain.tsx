@@ -41,6 +41,7 @@ const BlogList = () => {
     const [filtered, updateFiltered]: any = useState(initial);
     const [val, setValue] = useState("");
     const [liked, setLiked] = useState(false);
+    const [msg, updateMsg] = useState("Loading...")
     const handle = (e: any) => {
         setValue(e.target.value);
         if (e.target.value.length) {
@@ -62,12 +63,17 @@ const BlogList = () => {
     }
 
     useEffect(() => {
-        console.log(pathname);
+        // console.log(pathname);
         (async () => {
             const data = await getBlog({});
-            update(data.data);
-            updateFiltered(data.data);
+            if (data.status != 200) {
+                updateMsg("Error..");
+            } else {
+                update(data.data);
+                updateFiltered(data.data);
+            }
         })();
+        
     }, [pathname]);
 
     return (
@@ -77,7 +83,7 @@ const BlogList = () => {
                     <div className="md:top-0 md:left-0 z-20 md:sticky col-span-1 md:col-span-12 h-16 text-2xl">
                         <Input classNames={{ inputWrapper: "h-full", base: "h-full" }} onChange={handle} value={val} placeholder="Search Blog..." />
                     </div>
-                    {typeof initial == 'object' &&
+                    {typeof initial == 'object' ?
                         filtered.map((elem: any, ind: number) => (
                             <Card isFooterBlurred
                                 key={ind}
@@ -119,7 +125,8 @@ const BlogList = () => {
 
                                 </CardFooter>
                             </Card>
-                        ))
+                        )) :
+                        <> {msg} </>
                     }
 
                 </div>
