@@ -21,14 +21,15 @@ export async function POST(req: NextRequest, res: any) {
                 // elem.coverimageurl = `url(/tmp/${elem._id.toString()}coverimage.jpg)`;
                 elem.coverimageurl = `/tmp/${elem._id.toString()}coverimage.jpg`;
                 if (elem.images.coverimage != '')
-                    await writeFile(path.join(process.cwd(), `public/tmp/${elem._id.toString()}coverimage.jpg`), elem.images.coverimage.buffer);
+                    // await writeFile(path.join(process.cwd(), `public/tmp/${elem._id.toString()}coverimage.jpg`), elem.images.coverimage.buffer);
+                    await writeFile(path.join(process.cwd(), `tmp/${elem._id.toString()}coverimage.jpg`), elem.images.coverimage.buffer);
             })
         else {
             const images = Object.entries(data[0].images);
             let elem: any;
             for (elem of images) {
                 if (elem.length > 0) {
-                    await writeFile(path.join(process.cwd(), `public/tmp/${BlogId}${elem[0]}.jpg`), elem[1].buffer);
+                    await writeFile(path.join(process.cwd(), `tmp/${BlogId}${elem[0]}.jpg`), elem[1].buffer);
                     elem[1] = `/tmp/${BlogId}${elem[0]}.jpg`;
                 }
 
