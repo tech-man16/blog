@@ -67,7 +67,6 @@ const CreateBlog = (props: any) => {
   const handleImage = (e: any) => {
     try {
       const file = e.target.files?.[0];
-      console.log(file)
       const reader = new FileReader();
       reader.onloadend = () => {
         updateimage((prev: any) => ({ ...prev, coverimage: reader.result?.toString() || "" }))

@@ -69,11 +69,12 @@ const BlogList = () => {
             if (data.status != 200) {
                 updateMsg("Error..");
             } else {
+                console.log(data.data[0].coverimageurl);
                 update(data.data);
                 updateFiltered(data.data);
             }
         })();
-        
+
     }, [pathname]);
 
     return (
