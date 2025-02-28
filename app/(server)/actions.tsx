@@ -1,8 +1,8 @@
 import path from "path";
 
 const signup = async (params: any) => {
-    const Path = path.join(process.cwd(), "/insertBlog");
-    const res = await fetch(Path, {
+    const PATH = path.join(process.cwd(), "/insertBlog");
+    const res = await fetch(PATH, {
         method: "POST",
         body: JSON.stringify(params)
     })
@@ -11,10 +11,9 @@ const signup = async (params: any) => {
 
 }
 
-
 const getBlog = async (params: any) => {
-    const Path = path.join(process.cwd(), "/getblog2");
-    const res = await fetch(Path, {
+    const PATH = path.join(process.cwd(), "/getblog");
+    const res = await fetch(PATH, {
         method: "POST",
         body: JSON.stringify(params)
     })
