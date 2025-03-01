@@ -11,8 +11,8 @@ const signup = async (params: any) => {
 }
 
 const getBlog = async (params: any) => {
-    const PATH = path.join(process.cwd(), "/getblog");
-    const res = await fetch(PATH, {
+    const Path = path.join(process.cwd(), "/getblog");
+    const res = await fetch(Path, {
         method: "POST",
         body: JSON.stringify(params)
     })
