@@ -60,17 +60,17 @@ const BlogList = () => {
     router.push(`/Blog/Manas-Maheshwari/${date.getDay()}${e.target.id.slice(0, 8)}${date.getDay()}${date.getDay()}${e.target.id.slice(8)}`);
   }
 
+  const getBlogs = async () => {
+    const data = await getBlog({});
+    if (data.status != 200) {
+      updateMsg("Error..");
+    } else {
+      update(data.data);
+      updateFiltered(data.data);
+    }
+  }
   useEffect(() => {
-    (async () => {
-      const data = await getBlog({});
-      if (data.status != 200) {
-        updateMsg("Error..");
-      } else {
-        update(data.data);
-        updateFiltered(data.data);
-      }
-    })();
-
+    getBlogs();
   }, [pathname]);
 
   useEffect(() => {

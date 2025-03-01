@@ -8,7 +8,6 @@ const signup = async (params: any) => {
     })
     const data = await res.json();
     return data;
-
 }
 
 const getBlog = async (params: any) => {
@@ -19,6 +18,5 @@ const getBlog = async (params: any) => {
     })
     const data = await res.json();
     return data;
-
 }
 export { signup, getBlog }
