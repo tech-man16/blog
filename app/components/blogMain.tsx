@@ -61,19 +61,21 @@ const BlogList = () => {
   }
 
   useEffect(() => {
-    // console.log(pathname);
     (async () => {
       const data = await getBlog({});
       if (data.status != 200) {
         updateMsg("Error..");
       } else {
-        console.log(data.data[0].coverimageurl);
         update(data.data);
         updateFiltered(data.data);
       }
     })();
 
   }, [pathname]);
+
+  useEffect(() => {
+    console.log("comonent loaded successfully !!");
+  }, [router])
 
   return (
     <>
